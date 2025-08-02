@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minus (Lern-App / Mathematik / 1. Klasse)</title>
+
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script>
+
+        function generate_exercises(operator = "-", max = 10, setlength = 15) {
+            
+            const set = [];
+            const exercises = document.getElementById(`container-${max}`);
+            
+            let exercise_html = ``;
+            
+            for (let i = 1; i <= setlength; i++) {
+
+                let minuend = Math.floor(Math.random()*max);
+                let subtrahend = Math.floor(Math.random()*max);
+
+                while (subtrahend > minuend) {
+                    subtrahend = Math.floor(Math.random()*max);
+                }
+
+                exercise_html += `
+                    <div class="exercise" id="exercise-${i}">
+                        ${minuend} - ${subtrahend} = 
+                        <input type="number" class="result-input" name="result-${i}" id="result-1">
+                        <button class="submit-result button" id="submit-result-${i}">Prüfen</button>
+                    </div>
+                `;
+
+                
+                console.log(`Übung Nr. ${i}: ${minuend} - ${subtrahend} = `);
+            }
+            exercises.innerHTML = exercise_html;
+
+            console.log(operator, max, setlength);
+        }
+    </script>
+</head>
+<body onload="generate_exercises('-', 20, 15); generate_exercises('-', 10, 15);">
+    <h1>Minus</h1>
+
+    <div class="navbar">
+        <div class="button" onclick="window.location.href='./index.html'">
+            Zurück zur Übersicht
+        </div>
+    </div>
+    
+    <div class="section">
+        <h3>Zahlenraum bis 10</h3>
+        <div class="button generate-exercises" onclick="generate_exercises('-', 10, 15)">Neue Übungen generiern</div>
+        
+        <div class="exercises-container" id="container-10">
+
+            <div class="exercise" id="exercise-1">
+                15 - 8 = 
+                <input type="number" class="result-input" name="result-1" id="result-1">
+                <button class="submit-result button" id="submit-result-1">Prüfen</button>
+            </div>
+
+            <div class="exercise" id="exercise-1">
+                15 - 8 = 
+                <input type="number" class="result-input" name="result-1" id="result-1">
+                <button class="submit-result button" id="submit-result-1">Prüfen</button>
+            </div>
+
+            <div class="exercise" id="exercise-1">
+                15 - 8 = 
+                <input type="number" class="result-input" name="result-1" id="result-1">
+                <button class="submit-result button" id="submit-result-1">Prüfen</button>
+            </div>
+
+        </div>    
+
+    </div>
+
+    <div class="section">
+        <h3>Zahlenraum bis 20</h3>    
+        <div class="button generate-exercises" onclick="generate_exercises('-', 20, 15)">Neue Übungen generiern</div>
+        <div class="exercises-container" id="container-20">
+
+        </div>
+    </div>
+    
+
+    
+
+    
+</body>
+</html>

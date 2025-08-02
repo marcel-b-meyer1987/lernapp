@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Variables */
+
+:root {
+    --main-bg-color: rgba(211, 211, 211, 0.836);
+    --main-color: rgba(35, 107, 202, 0.8);
+    --accent-color: rgba(14, 233, 185, 0.897);
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--main-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 800;
+    margin: 30px 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.section {
+    padding: 10px;
+    margin: 20px 0px;
+    background-color: rgba(109, 107, 107, 0.5);
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    background-color: white;
+    border:solid 3px rgba(35, 107, 202, 0.8);
+    border-radius: 15px;
+    padding: 10px 15px;
+    display:inline-block;
+    font-weight: 600;
+    
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: var(--accent-color);
+}
+
+.exercises-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.exercise {
+    display: inline-block;
+    background-color: white;
+    border: solid 1px black;
+    font-size: 20px;
+    margin: 15px 5px;
+    padding: 10px 15px;
+    line-height: 20px;
+}
+
+.result-input {
+    background-color: white;
+    border: solid 1px black;
+    padding: 3px 15px;
+    line-height: 20px;
+    font-size: 20px;
+    width: 70px;
+    text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.submit-result {
+    
+}
